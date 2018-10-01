@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 class Player extends React.Component {
   componentDidMount(){
     window.onYouTubeIframeAPIReady = () => {
-      this.player = new YT.Player('player', {
-        height: '390',
+      this.player = new YT.Player('myPlayer', {
+        height: '690',
         width: '640',
         videoId: this.props.videoId
       });
@@ -22,10 +22,14 @@ class Player extends React.Component {
   render(){
     return (
       <div>
-        <div id="player"></div>
+        <div id="myPlayer"></div>
       </div>
     );
   }
+};
+
+Player.propTypes = {
+  videoId: PropTypes.string
 };
 
 export default Player;
